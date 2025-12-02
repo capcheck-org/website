@@ -1,0 +1,30 @@
+app = "capcheck-org-backend"
+primary_region = "ord"
+
+[build]
+
+[http_service]
+  internal_port = 1337
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+
+[mounts]
+  source = "strapi_uploads"
+  destination = "/app/public/uploads"
+
+[env]
+  NODE_ENV = "production"
+  DATABASE_CLIENT = "postgres"
+  DATABASE_HOST = "capcheck-org-postgres.internal"
+  DATABASE_PORT = "5432"
+  DATABASE_NAME = "strapi"
+  DATABASE_USERNAME = "strapi"
+  HOST = "0.0.0.0"
+  PORT = "1337"
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1

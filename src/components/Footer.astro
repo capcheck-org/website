@@ -1,0 +1,51 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-content">
+    <span class="copyright">&copy; {currentYear} CapCheck 501(c)(3). All rights reserved.</span>
+    <span class="separator">·</span>
+    <a href="/legal" class="footer-link">Terms & Privacy</a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--gray-6);
+    background: transparent;
+    padding: 24px 0;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .copyright {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+  }
+
+  .separator {
+    color: var(--gray-3);
+    font-size: var(--text-sm);
+  }
+
+  .footer-link {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--brand-primary);
+  }
+</style>

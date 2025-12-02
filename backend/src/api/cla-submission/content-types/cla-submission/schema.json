@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cla_submissions",
+  "info": {
+    "singularName": "cla-submission",
+    "pluralName": "cla-submissions",
+    "displayName": "CLA Submission",
+    "description": "Contributor License Agreement submissions"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "lastName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "streetAddress": {
+      "type": "string",
+      "required": true,
+      "maxLength": 500
+    },
+    "addressLine2": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "stateProvince": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "postalCode": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "country": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "electronicSignature": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "signedAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "ipAddress": {
+      "type": "string",
+      "required": true,
+      "maxLength": 45
+    },
+    "claVersion": {
+      "type": "string",
+      "required": true,
+      "default": "1.0",
+      "maxLength": 20
+    }
+  }
+}

@@ -1,0 +1,73 @@
+---
+import AppBadge from './AppBadge.svelte';
+---
+
+<header>
+  <div class="header-content">
+    <a href="/" class="logo-link" aria-label="CapCheck Home">
+      <img src="/cap-icon-transparent.svg" alt="CapCheck" class="logo-icon" />
+    </a>
+    <div class="header-badge">
+      <AppBadge fixed={false} client:load />
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+  }
+
+  .header-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .logo-link:hover {
+    opacity: 0.8;
+  }
+
+  .logo-icon {
+    height: 36px;
+    width: auto;
+    filter: var(--logo-filter);
+    margin-top: -1px;
+  }
+
+  .header-badge {
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 600px) {
+    .header-content {
+      padding: 0 24px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .header-content {
+      padding: 0 32px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .header-content {
+      padding: 0;
+    }
+  }
+</style>

@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import AppBadge from '../components/AppBadge.svelte';
+---
+
+<BaseLayout title="CapCheck - Coming December 2025" description="CapCheck - Launching December 2025">
+  <AppBadge client:load />
+
+  <div class="page-wrapper">
+    <main>
+      <div class="container">
+        <img
+          src="/logo_icon_flat_light_transparent.png"
+          alt="CapCheck"
+          class="cap-logo"
+        />
+
+        <div class="content">
+          <p class="tagline">
+            We're building something to help you distinguish fact from fiction.
+          </p>
+          <p class="description">
+            CapCheck is an AI-powered fact-checking platform that brings clarity to the information you encounter online.
+          </p>
+          <p class="launch">
+            Launching December 2025
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>
+
+<style>
+  .page-wrapper {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 640px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .cap-logo {
+    width: 120px;
+    height: 120px;
+    transition: transform 0.3s ease;
+  }
+
+  .cap-logo:hover {
+    transform: scale(1.05);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .tagline {
+    font-size: var(--text-xl);
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .description {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .launch {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    background: linear-gradient(
+      135deg,
+      var(--brand-primary) 0%,
+      var(--color-cyan) 50%,
+      var(--color-purple) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @media (max-width: 640px) {
+    main {
+      padding: 1.5rem;
+    }
+
+    .container {
+      gap: 1.5rem;
+    }
+
+    .cap-logo {
+      width: 88px;
+      height: 88px;
+    }
+
+    .content {
+      gap: 1rem;
+    }
+
+    .tagline {
+      font-size: var(--text-lg);
+      line-height: 1.4;
+    }
+
+    .description {
+      font-size: var(--text-base);
+      line-height: 1.5;
+    }
+
+    .launch {
+      font-size: var(--text-lg);
+      margin-top: 0.25rem;
+    }
+  }
+</style>

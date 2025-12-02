@@ -1,0 +1,37 @@
+{
+  "name": "capcheck-org",
+  "version": "2025.12.0",
+  "description": "CapCheck.org - Coming December 2025",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "backend"
+  ],
+  "scripts": {
+    "dev": "docker compose up",
+    "dev:native": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "astro dev",
+    "dev:backend": "npm run develop -w backend",
+    "dev:build": "docker compose up --build",
+    "stop": "docker compose stop",
+    "restart": "docker compose restart",
+    "down": "docker compose down",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "latest",
+    "@astrojs/node": "latest",
+    "@astrojs/svelte": "latest",
+    "astro": "latest",
+    "svelte": "latest"
+  },
+  "license": "AGPL-3.0-only",
+  "author": {
+    "name": "CapCheck",
+    "email": "aaron@capcheck.org"
+  },
+  "devDependencies": {
+    "concurrently": "latest"
+  }
+}

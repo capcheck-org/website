@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import BrandPage from '../components/BrandPage.svelte';
+---
+
+<BaseLayout title="Brand Style Guide | CapCheck">
+  <Header />
+  <BrandPage client:load />
+</BaseLayout>

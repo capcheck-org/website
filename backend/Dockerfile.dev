@@ -1,0 +1,19 @@
+FROM node:22-alpine
+
+RUN apk add --no-cache libc6-compat
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json ./
+
+# Install all dependencies (including dev)
+RUN npm install
+
+# Copy source
+COPY . .
+
+EXPOSE 1337
+
+# Run in develop mode for hot reload
+CMD ["npm", "run", "develop"]

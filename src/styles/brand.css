@@ -1,0 +1,249 @@
+:root {
+  /* Brand Colors */
+  --brand-primary: #0088ff;
+  --brand-primary-light: #0091ff;
+  --brand-primary-dark: #1e6ef4;
+  --brand-primary-tint: #5db8ff;
+
+  /* Semantic Colors */
+  --color-success: #35c759;
+  --color-success-light: #31d158;
+  --color-success-dark: #008932;
+  --color-success-tint: #49d968;
+
+  --color-error: #ff393c;
+  --color-error-light: #ff4246;
+  --color-error-dark: #e9152d;
+  --color-error-tint: #ff6165;
+
+  --color-warning: #ffcc02;
+  --color-warning-light: #fed700;
+  --color-warning-dark: #a16a01;
+  --color-warning-tint: #fedf43;
+
+  /* Grayscale - Light Mode */
+  --gray-1: #838388;
+  --gray-2: #a4a5a9;
+  --gray-3: #bfc0c5;
+  --gray-4: #cbcbd0;
+  --gray-5: #e1e1e7;
+  --gray-6: #f0f0f6;
+
+  /* Extended Palette */
+  --color-red: #ff393c;
+  --color-orange: #ff8d28;
+  --color-yellow: #ffcc02;
+  --color-green: #35c759;
+  --color-mint: #00c8b3;
+  --color-teal: #03c3d1;
+  --color-cyan: #00c0e8;
+  --color-blue: #0088ff;
+  --color-indigo: #6155f5;
+  --color-purple: #cb30e0;
+  --color-pink: #ff2c55;
+  --color-brown: #ac7f5e;
+
+  /* Typography - System fonts only */
+  --font-display: ui-serif, serif;
+  --font-system: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+  --text-6xl: 60px;
+
+  /* Theme Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0f0f6;
+  --text-primary: #000000;
+  --text-secondary: #838388;
+  --logo-color: #0088ff;
+  --logo-filter: brightness(0) saturate(100%) invert(41%) sepia(96%)
+    saturate(1815%) hue-rotate(196deg) brightness(102%) contrast(101%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Mode Grayscale */
+    --gray-1: #616165;
+    --gray-2: #58585b;
+    --gray-3: #3f3f41;
+    --gray-4: #333335;
+    --gray-5: #272729;
+    --gray-6: #1a1a1c;
+
+    /* Dark Mode Theme Colors */
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1c;
+    --text-primary: #ffffff;
+    --text-secondary: #a4a5a9;
+    --logo-color: #0088ff;
+    --logo-filter: brightness(0) saturate(100%) invert(41%) sepia(96%)
+      saturate(1815%) hue-rotate(196deg) brightness(102%) contrast(101%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--bg-primary);
+}
+
+body {
+  font-family: var(--font-system);
+  font-size: var(--text-base);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Optimize rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+body > * {
+  animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+body > *:not(.no-animation) {
+  will-change: transform, opacity;
+}
+
+/* Remove will-change after animation completes to save GPU resources */
+@media (prefers-reduced-motion: no-preference) {
+  body > * {
+    animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+[role='button'],
+img {
+  transition: transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 4px;
+  border-radius: 8px;
+  transition: outline-offset 0.2s ease;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+[role='button']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Add premium shadows for cards */
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.card-shadow-hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Selection colors */
+::selection {
+  background-color: rgba(0, 136, 255, 0.25);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background-color: rgba(0, 136, 255, 0.25);
+  color: var(--text-primary);
+}
+
+/* Optimize image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: auto;
+}
+
+/* SVG specific optimization */
+svg {
+  shape-rendering: geometricPrecision;
+}
+
+/* Optimize scrolling on mobile */
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Safe area insets for modern devices */
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Optimize for high refresh rate displays */
+@media (prefers-reduced-motion: no-preference) {
+  @media (min-resolution: 120dpi) {
+    * {
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}

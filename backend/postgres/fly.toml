@@ -1,0 +1,29 @@
+app = "capcheck-org-postgres"
+primary_region = "ord"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  POSTGRES_DB = "strapi"
+  POSTGRES_USER = "strapi"
+  # Use subdirectory to avoid lost+found conflict
+  PGDATA = "/data/postgresql"
+
+[mounts]
+  source = "pg_data"
+  destination = "/data"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 5432
+
+  # Only allow internal connections (from other Fly apps)
+  [[services.ports]]
+    port = 5432
+    handlers = ["pg_tls"]
+
+[[vm]]
+  memory = "1gb"
+  cpu_kind = "shared"
+  cpus = 1
