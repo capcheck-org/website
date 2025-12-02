@@ -37,7 +37,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/src ./src
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/tsconfig.json ./tsconfig.json
-COPY --from=builder /app/favicon.png ./favicon.png
+COPY --from=builder /app/favicon.ico ./favicon.ico
 
 # Fix permissions for strapi user
 RUN chown -R strapi:nodejs /app
