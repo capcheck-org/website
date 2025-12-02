@@ -70,3 +70,7 @@ The site follows the CapCheck brand guidelines:
 - **Theme**: Automatic light/dark mode based on system preferences
 
 All brand assets (fonts, SVG icons) are located in the `/static` directory.
+
+## Contributing
+
+We welcome contributions! Before submitting a pull request, please read our [Contributing Guide](CONTRIBUTING.md) and sign the [Contributor License Agreement](https://capcheck.org/cla).
