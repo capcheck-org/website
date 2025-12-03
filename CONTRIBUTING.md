@@ -6,7 +6,7 @@ Thank you for your interest in contributing to CapCheck!
 
 Before we can accept your contributions, you must sign our Contributor License Agreement.
 
-**Please complete the CLA form here: [https://capcheck.org/cla](https://capcheck.org/cla)**
+**Please complete the CLA form here: <a href="https://capcheck.org/cla" target="_blank">https://capcheck.org/cla</a>**
 
 The CLA ensures that:
 - You have the right to submit the contribution
@@ -15,7 +15,7 @@ The CLA ensures that:
 
 ## How to Contribute
 
-1. **Sign the CLA** at [https://capcheck.org/cla](https://capcheck.org/cla)
+1. **Sign the CLA** at <a href="https://capcheck.org/cla" target="_blank">https://capcheck.org/cla</a>
 2. Fork the repository
 3. Create a feature branch (`git checkout -b feature/your-feature`)
 4. Make your changes

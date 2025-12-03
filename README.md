@@ -73,4 +73,4 @@ All brand assets (fonts, SVG icons) are located in the `/static` directory.
 
 ## Contributing
 
-We welcome contributions! Before submitting a pull request, please read our [Contributing Guide](CONTRIBUTING.md) and sign the [Contributor License Agreement](https://capcheck.org/cla).
+We welcome contributions! Before submitting a pull request, please read our [Contributing Guide](CONTRIBUTING.md) and sign the <a href="https://capcheck.org/cla" target="_blank">Contributor License Agreement</a>.
